@@ -4,7 +4,7 @@ volumes:
 
 services:
 
-  noise_app:
+  app:
     image: zaphire12/noise_app
     env_file: .env
     volumes:
