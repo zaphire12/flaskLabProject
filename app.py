@@ -1,9 +1,9 @@
 import os
 
-from PIL import Image, ImageOps
 from dotenv import load_dotenv
 from flask import (Flask, flash, redirect, render_template, request,
                    send_from_directory, url_for)
+from PIL import Image, ImageOps
 
 from constants import PROCESSED_FOLDER, UPLOAD_FOLDER
 from service import (add_gaussian_noise, plot_color_distribution,
