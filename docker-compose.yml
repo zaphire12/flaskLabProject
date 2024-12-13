@@ -17,9 +17,11 @@ services:
       - media:/app/media
 
   gateway:
+    depends_on:
+      - app
     container_name: proxy
     build: ./gateway
     volumes:
       - media:/media/
     ports:
-      - "80:80"
+      - "9000:80"
