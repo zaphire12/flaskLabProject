@@ -1,0 +1,21 @@
+volumes:
+  media:
+
+
+services:
+
+  noise_app:
+    image: zaphire12/noise_app
+    env_file: .env
+    volumes:
+      - media:/app/media
+
+  gateway:
+    depends_on:
+      - noise_app
+    image: zaphire12/noise_gateway
+    env_file: .env
+    ports:
+      - "9000:80"
+    volumes:
+      - media:/media/
